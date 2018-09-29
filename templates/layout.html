@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Dashboard">
+        <meta name="keywords" content="Administrator">
+        <meta name="author" content="Space Concordia">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='plugins/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='plugins/font-awesome/css/font-awesome.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='plugins/icomoon/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='plugins/uniform/css/default.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/space.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}">
+        {% if title %}
+        <title>Graphical User Interface Project - {{ title }}</title>
+        {% else %}
+        <title>Space Concordia</title>
+        {% endif %}
+</head>
+<body >
+<div class="page-container">
+    <div class="page-sidebar">
+        <a class="logo-box">
+            <span>Space Concordia</span>
+        </a>
+        <div class="page-sidebar-inner">
+            <div class="page-sidebar-menu">
+                <ul class="accordion-menu">
+                    <li>
+                        <a><i class="active-page menu-icon icon-home4"></i><span>Dashboard</span></a>
+                    </li>
+                    <li>
+                        <a><i class="menu-icon icon-layers"></i><span>Sensors</span><i class="accordion-icon fa fa-angle-left"></i></a>
+                    </li>
+                    <li>
+                        <a><i class="menu-icon icon-format_list_bulleted"></i><span>Data</span><i class="accordion-icon fa fa-angle-left"></i></a>
+                    </li>
+                    <li>
+                        <a><i class="menu-icon icon-show_chart"></i><span>Charts</span></a>
+                    </li>
+                    <li>
+                        <a><i class="menu-icon icon-my_location"></i><span>Maps</span><i class="accordion-icon fa fa-angle-left"></i></a>
+                    </li>
+                    <li class="menu-divider"></li>
+                    <li>
+                        <a><i class="menu-icon icon-help_outline"></i><span>Documentation</span></a>
+                    </li>
+                    <li>
+                        <a><i class="menu-icon icon-public"></i><span>Release</span><span class="label label-danger">3.0</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="page-inner col-md-12">
+        <div class="page-title">
+            <h3 class="breadcrumb-header">Dashboard</h3>
+        </div>
+        <div id="main-wrapper">
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="panel panel-white">
+                        <div class="panel-heading clearfix">
+                            <h4 class="panel-title">Controlling the Arduino</h4>
+                            {% block content %}
+                            {% endblock content %}
+                        </div>
+                        <div class="panel-body">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8">
+                    <div class="panel panel-white">
+                        <div class="panel-heading clearfix">
+                            <h4 class="panel-title">System Tasks</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="task-list">
+                                <div class="task-item">
+                                    <span class="task-name">Ambient light measurements</span>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+                                            <span class="sr-only">80% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="task-item">
+                                    <span class="task-name">Battery calibration</span>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+                                            <span class="sr-only">10% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="task-item">
+                                    <span class="task-name">Communications channel check</span>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+                                            <span class="sr-only">80% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="task-item">
+                                    <span class="task-name">Motor check<i class="fa fa-check"></i></span>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                            <span class="sr-only">100% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="task-item">
+                                    <span class="task-name">Sensor calibration<i class="fa fa-check"></i></span>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                            <span class="sr-only">100% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="task-item">
+                                    <span class="task-name">Robotic Arm Check<i class="fa fa-check"></i></span>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                            <span class="sr-only">100% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="panel panel-white">
+                        <div class="panel-heading clearfix">
+                            <h4 class="panel-title">Mission Tasks</h4>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">001</th>
+                                        <td>Local topography mapping</td>
+                                        <td>Map surrounding geography</td>
+                                        <td></td>
+                                        <td><span class="label label-success">Finished</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">002</th>
+                                        <td>Ground analysis</td>
+                                        <td>Analyze geological composition of rocks</td>
+                                        <td></td>
+                                        <td><span class="label label-success">Finished</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">003</th>
+                                        <td>Rescue</td>
+                                        <td>Retrieve and safely recover astronaut</td>
+                                        <td></td>
+                                        <td><span class="label label-warning">Pending</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">004</th>
+                                        <td>Flag planting</td>
+                                        <td>Plant flag with Space Concordia logos</td>
+                                        <td></td>
+                                        <td><span class="label label-warning">Pending</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">005</th>
+                                        <td>Output construction</td>
+                                        <td>Build base with specified components</td>
+                                        <td></td>
+                                        <td><span class="label label-default">Upcoming</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+        </div>
+    </div>
+</div>
+</body>
+</html>

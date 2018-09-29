@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+    <form class="panel" method="post" action="/">
+        <h5>LED Control</h5>
+        <input type="submit" name="submit" value="LED On ">
+        <input type="submit" name="submit" value="LED Off">
+    </form>
+    <form class="panel">
+        <h5 class="task-name">Sensor Control </h5>
+        <input type="submit" name="submit" value="Check">
+        <p> Click to display the most recent value</p>
+        <p>Light Intensity Sensor: {{ reading }}</p>
+    </form>
+
+{% endblock content %}
